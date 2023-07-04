@@ -1,3 +1,4 @@
+
 //BIENVENIDA
 function saludar (){
     alert ("Hola, somos Cami & Yani, estamos para ayudarte");
@@ -321,3 +322,10 @@ function darDespedida(){
 darDespedida()
 
 //ver de colocar return
+function calcularTotal(){
+    return gastoTotal + gastoTotal2 + gastoTotal3 + gastoTotal4 + gastoTotal5 + gastoTotal6
+    + gastoTotal7 + gastoTotal8 ;
+}
+
+let resultado = calcularTotal();
+console.log ("su total a pagar es: " + (resultado));
