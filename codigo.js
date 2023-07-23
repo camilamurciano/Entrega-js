@@ -326,6 +326,8 @@ alert ("su total a pagar es: " + (resultado));
 
 console.log ("Su total a pagar es: " + (resultado))
 
+//granos de cafe
+
 console.log ("Nuestros 1/4 de cafe son los siguiente:")
 function Granos(molienda, proceso, puntaje) {
     this.molienda = molienda;
@@ -360,7 +362,7 @@ while (opcion != 'no') {
     listaProducto.push(prodNuevo);
     opcion = prompt('Quieres que agreguemos algun producto que no se encuentra en nuestra tienda (si/no)');
 }
-
+//filtrados
 console.log ("Estos son nuestro metodos de filtrados que estan a la venta:")
 const listaFiltrados = [];
 
@@ -464,7 +466,7 @@ const nombreYPrecio = Cafeteras.map(cafetera =>{
 console.table (nombreYPrecio);
 
 let gastoTotal10 = 0; //variable global que tomara el total del carrito
-//filtrado
+//maquina de cafe
 let listaCafetera = prompt("¿Queres agregar alguna Maquina de Cafe a tu carrito? \n1-Victoria Arduino U$D 5500 \n2-Iberital U$D 4000 \n3-Nueva Simonelli U$D 4500\n4-Rocket U$D 3500\n0-Para salir");
 
 while(listaCafetera != '0'){
