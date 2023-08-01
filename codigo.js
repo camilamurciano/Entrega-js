@@ -1,4 +1,4 @@
-
+/*
 //BIENVENIDA
 function saludar (){
     alert ("Hola, somos Cami & Yani, estamos para ayudarte");
@@ -451,7 +451,7 @@ console.log ("Si usted desea adquirir o conocer el precio de nuestras maquinas d
     precio: 3500
 }
 ]
-*/
+
 console.table (Cafeteras);
 
 //funciones de orden superior MAP
@@ -518,3 +518,207 @@ function darDespedida(){
 }
 
 darDespedida()
+*/
+const carro = [];
+
+//cafe sin leche
+let contenedorCafe = document.getElementById('cafeSolo');
+let tablaBody3 = document.getElementById('tablabody');
+console.table (cafeSolo);
+function renderizarProductos2(listaCafe){
+    //vaciamos en contenedor para evitar duplicados
+    
+    //cargamos las cartas de los productos solicitados
+    for(const prod of listaCafe){
+        contenedorCafe.innerHTML+=`
+            <div class="card col-sm-2">
+                <img class="card-img-top" src=${prod.imagen} alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">${prod.nombre}</h5>
+                    <p class="card-text">$ ${prod.precio}</p>
+                    <button id=${prod.id} class="btn btn-primary compra">Comprar</button>
+                </div>
+            </div>
+        `;
+    }
+    }
+    renderizarProductos2(cafeSolo);
+
+//cafe con leche
+let contenedorCafeLeche = document.getElementById('cafeLeche');
+let tablaBody4 = document.getElementById('tablabody');
+console.table (cafeLeche);
+function renderizarProductos3(listaCafeLeche){
+    //vaciamos en contenedor para evitar duplicados
+    
+    //cargamos las cartas de los productos solicitados
+    for(const prod of listaCafeLeche){
+        contenedorCafeLeche.innerHTML+=`
+            <div class="card col-sm-2">
+                <img class="card-img-top" src=${prod.imagen} alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">${prod.nombre}</h5>
+                    <p class="card-text">$ ${prod.precio}</p>
+                    <button id=${prod.id} class="btn btn-primary compra">Comprar</button>
+                </div>
+            </div>
+        `;
+    }
+    }
+    renderizarProductos3(cafeLeche);
+//cafe especial
+    let contenedorCafeEspecial = document.getElementById('cafeEspecial');
+    let tablaBody5 = document.getElementById('tablabody');
+    console.table (cafeEspecial);
+    function renderizarProductos4(listaCafeEspecial){
+        //vaciamos en contenedor para evitar duplicados
+        
+        //cargamos las cartas de los productos solicitados
+        for(const prod of listaCafeEspecial){
+            contenedorCafeEspecial.innerHTML+=`
+                <div class="card col-sm-2">
+                    <img class="card-img-top" src=${prod.imagen} alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">${prod.nombre}</h5>
+                        <p class="card-text">$ ${prod.precio}</p>
+                        <button id=${prod.id} class="btn btn-primary compra">Comprar</button>
+                    </div>
+                </div>
+            `;
+        }
+        }
+        renderizarProductos4(cafeEspecial);
+//cafe frio
+let contenedorCafeFrio = document.getElementById('cafeFrio');
+let tablaBody6 = document.getElementById('tablabody');
+console.table (cafeFrio);
+function renderizarProductos5(listaCafeFrio){
+    //vaciamos en contenedor para evitar duplicados
+    
+    //cargamos las cartas de los productos solicitados
+    for(const prod of listaCafeFrio){
+        contenedorCafeFrio.innerHTML+=`
+            <div class="card col-sm-2">
+                <img class="card-img-top" src=${prod.imagen} alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">${prod.nombre}</h5>
+                    <p class="card-text">$ ${prod.precio}</p>
+                    <button id=${prod.id} class="btn btn-primary compra">Comprar</button>
+                </div>
+            </div>
+        `;
+    }
+    }
+    renderizarProductos5(cafeFrio);
+//cafe filtrado
+let contenedorCafeFiltrado = document.getElementById('cafeFiltrado');
+let tablaBody7 = document.getElementById('tablabody');
+console.table (cafeFiltrado);
+function renderizarProductos6(listaCafeFiltrado){
+    //vaciamos en contenedor para evitar duplicados
+    
+    //cargamos las cartas de los productos solicitados
+    for(const prod of listaCafeFiltrado){
+        contenedorCafeFiltrado.innerHTML+=`
+            <div class="card col-sm-2">
+                <img class="card-img-top" src=${prod.imagen} alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">${prod.nombre}</h5>
+                    <p class="card-text">$ ${prod.precio}</p>
+                    <button id=${prod.id} class="btn btn-primary compra">Comprar</button>
+                </div>
+            </div>
+        `;
+    }
+    }
+    renderizarProductos6(cafeFiltrado);
+//comida
+let contenedorComida = document.getElementById('menuComida');
+let tablaBody8 = document.getElementById('tablabody');
+console.table (comida1);
+function renderizarProductos7(listaComida){
+    //vaciamos en contenedor para evitar duplicados
+    
+    //cargamos las cartas de los productos solicitados
+    for(const prod of listaComida){
+        contenedorComida.innerHTML+=`
+            <div class="card col-sm-2">
+                <img class="card-img-top" src=${prod.imagen} alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">${prod.nombre}</h5>
+                    <p class="card-text">$ ${prod.precio}</p>
+                    <button id=${prod.id} class="btn btn-primary compra">Comprar</button>
+                </div>
+            </div>
+        `;
+    }
+    }
+    renderizarProductos7(comida1);
+//bebidas
+let contenedorBebida = document.getElementById('menuBebida');
+let tablaBody9 = document.getElementById('tablabody');
+console.table (bebidas1);
+function renderizarProductos8(listaBebida){
+    //vaciamos en contenedor para evitar duplicados
+    
+    //cargamos las cartas de los productos solicitados
+    for(const prod of listaBebida){
+        contenedorBebida.innerHTML+=`
+            <div class="card col-sm-2">
+                <img class="card-img-top" src=${prod.imagen} alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">${prod.nombre}</h5>
+                    <p class="card-text">$ ${prod.precio}</p>
+                    <button id=${prod.id} class="btn btn-primary compra">Comprar</button>
+                </div>
+            </div>
+        `;
+    }
+    }
+    renderizarProductos8(bebidas1);
+//maquinas de cafe
+let contenedorProds = document.getElementById('misprods');
+let tablaBody = document.getElementById('tablabody');
+console.table (Cafeteras);
+function renderizarProductos(listaMaquina){
+    //vaciamos en contenedor para evitar duplicados
+    contenedorProds.innerHTML='';
+    //cargamos las cartas de los productos solicitados
+    for(const prod of listaMaquina){
+        contenedorProds.innerHTML+=`
+            <div class="card col-sm-2">
+                <img class="card-img-top" src=${prod.imagen} alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">${prod.nombre}</h5>
+                    <p class="card-text">U$D ${prod.precio}</p>
+                    <button id=${prod.id} class="btn btn-primary compra">Comprar</button>
+                </div>
+            </div>
+        `;
+    }
+    }
+    renderizarProductos(Cafeteras);
+//equipos para filtrado
+let contenedorFilt = document.getElementById('equipoFilt');
+let tablaBody2 = document.getElementById('tablabody');
+console.table (productoFiltrado);
+function renderizarProductos1(listaEquipo){
+    //vaciamos en contenedor para evitar duplicados
+    
+    //cargamos las cartas de los productos solicitados
+    for(const prod of listaEquipo){
+        contenedorFilt.innerHTML+=`
+            <div class="card col-sm-2">
+                <img class="card-img-top" src=${prod.imagen} alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">${prod.nombre}</h5>
+                    <p class="card-text">U$D ${prod.precio}</p>
+                    <button id=${prod.id} class="btn btn-primary compra">Comprar</button>
+                </div>
+            </div>
+        `;
+    }
+    }
+    renderizarProductos1(productoFiltrado);
+    
+    
