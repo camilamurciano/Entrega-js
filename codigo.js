@@ -523,11 +523,11 @@ const carro = [];
 
 //cafe sin leche
 let contenedorCafe = document.getElementById('cafeSolo');
-let tablaBody3 = document.getElementById('tablabody');
+let tablaBody = document.getElementById('tablabody');
 console.table (cafeSolo);
 function renderizarProductos2(listaCafe){
     //vaciamos en contenedor para evitar duplicados
-    
+
     //cargamos las cartas de los productos solicitados
     for(const prod of listaCafe){
         contenedorCafe.innerHTML+=`
@@ -541,12 +541,37 @@ function renderizarProductos2(listaCafe){
             </div>
         `;
     }
+    let botones1 = document.getElementsByClassName ("compra")
+    for (const boton of botones1){
+        boton.addEventListener("click", () =>{
+            console.log("hiciste click en "+ boton.id);
+            const prodACarro = cafeSolo.find((producto) => producto.id == boton.id);
+            console.log(prodACarro);
+            //cargar productos al carro
+            agregarACarrito(prodACarro);
+        })
+        }
     }
+    
     renderizarProductos2(cafeSolo);
 
+    function agregarACarrito(producto){
+        carro.push(producto);
+        console.table(carro);
+        alert('Agregaste '+producto.nombre+' al carrito')
+        tablaBody.innerHTML +=`
+        <tr>
+            <td>${producto.id}</td>
+            <td>${producto.nombre}</td>
+            <td>${producto.precio}</td>
+        </tr>
+    `;
+        }
+    
+    
 //cafe con leche
 let contenedorCafeLeche = document.getElementById('cafeLeche');
-let tablaBody4 = document.getElementById('tablabody');
+let tablaBody2 = document.getElementById('tablabody');
 console.table (cafeLeche);
 function renderizarProductos3(listaCafeLeche){
     //vaciamos en contenedor para evitar duplicados
@@ -564,11 +589,37 @@ function renderizarProductos3(listaCafeLeche){
             </div>
         `;
     }
+    let botones2 = document.getElementsByClassName ("compra")
+    for (const boton of botones2){
+        boton.addEventListener("click", () =>{
+            console.log("hiciste click en "+ boton.id);
+            const prodACarro = cafeLeche.find((producto) => producto.id == boton.id);
+            console.log(prodACarro);
+            //cargar productos al carro
+            agregarACarrito(prodACarro);
+        })
+        }
     }
+    
     renderizarProductos3(cafeLeche);
+
+    function agregarACarrito(producto){
+        carro.push(producto);
+        console.table(carro);
+        alert('Agregaste '+producto.nombre+' al carrito')
+        tablaBody.innerHTML +=`
+        <tr>
+            <td>${producto.id}</td>
+            <td>${producto.nombre}</td>
+            <td>${producto.precio}</td>
+        </tr>
+    `;
+        }
+        
+
 //cafe especial
     let contenedorCafeEspecial = document.getElementById('cafeEspecial');
-    let tablaBody5 = document.getElementById('tablabody');
+    let tablaBody3 = document.getElementById('tablabody');
     console.table (cafeEspecial);
     function renderizarProductos4(listaCafeEspecial){
         //vaciamos en contenedor para evitar duplicados
@@ -586,8 +637,37 @@ function renderizarProductos3(listaCafeLeche){
                 </div>
             `;
         }
+        
+        let botones3 = document.getElementsByClassName ("compra")
+    for (const boton of botones3){
+        boton.addEventListener("click", () =>{
+            console.log("hiciste click en "+ boton.id);
+            const prodACarro = cafeEspecial.find((producto) => producto.id == boton.id);
+            console.log(prodACarro);
+            //cargar productos al carro
+            agregarACarrito(prodACarro);
+        })
         }
+        }
+
+
+        
+        
         renderizarProductos4(cafeEspecial);
+
+        function agregarACarrito(producto){
+            carro.push(producto);
+            console.table(carro);
+            alert('Agregaste '+producto.nombre+' al carrito')
+            tablaBody.innerHTML +=`
+            <tr>
+                <td>${producto.id}</td>
+                <td>${producto.nombre}</td>
+                <td>${producto.precio}</td>
+            </tr>
+        `;
+            }
+
 //cafe frio
 let contenedorCafeFrio = document.getElementById('cafeFrio');
 let tablaBody6 = document.getElementById('tablabody');
@@ -608,8 +688,35 @@ function renderizarProductos5(listaCafeFrio){
             </div>
         `;
     }
-    }
+    let botones4 = document.getElementsByClassName ("compra")
+    for (const boton of botones4){
+        boton.addEventListener("click", () =>{
+            console.log("hiciste click en "+ boton.id);
+            const prodACarro = cafeFrio.find((producto) => producto.id == boton.id);
+            console.log(prodACarro);
+            //cargar productos al carro
+            agregarACarrito(prodACarro);
+        })
+        }
+        }
+    
+
     renderizarProductos5(cafeFrio);
+
+    function agregarACarrito(producto){
+        carro.push(producto);
+        console.table(carro);
+        alert('Agregaste '+producto.nombre+' al carrito')
+        tablaBody.innerHTML +=`
+        <tr>
+            <td>${producto.id}</td>
+            <td>${producto.nombre}</td>
+            <td>${producto.precio}</td>
+        </tr>
+    `;
+        
+        }
+
 //cafe filtrado
 let contenedorCafeFiltrado = document.getElementById('cafeFiltrado');
 let tablaBody7 = document.getElementById('tablabody');
@@ -630,8 +737,34 @@ function renderizarProductos6(listaCafeFiltrado){
             </div>
         `;
     }
-    }
+    let botones5 = document.getElementsByClassName ("compra")
+    for (const boton of botones5){
+        boton.addEventListener("click", () =>{
+            console.log("hiciste click en "+ boton.id);
+            const prodACarro = cafeFiltrado.find((producto) => producto.id == boton.id);
+            console.log(prodACarro);
+            //cargar productos al carro
+            agregarACarrito(prodACarro);
+        })
+        }
+        }
+    
     renderizarProductos6(cafeFiltrado);
+
+    function agregarACarrito(producto){
+        carro.push(producto);
+        console.table(carro);
+        alert('Agregaste '+producto.nombre+' al carrito')
+        tablaBody.innerHTML +=`
+        <tr>
+            <td>${producto.id}</td>
+            <td>${producto.nombre}</td>
+            <td>${producto.precio}</td>
+        </tr>
+    `;
+        }
+        
+
 //comida
 let contenedorComida = document.getElementById('menuComida');
 let tablaBody8 = document.getElementById('tablabody');
@@ -652,8 +785,33 @@ function renderizarProductos7(listaComida){
             </div>
         `;
     }
-    }
+    let botones6 = document.getElementsByClassName ("compra")
+    for (const boton of botones6){
+        boton.addEventListener("click", () =>{
+            console.log("hiciste click en "+ boton.id);
+            const prodACarro = comida1.find((producto) => producto.id == boton.id);
+            console.log(prodACarro);
+            //cargar productos al carro
+            agregarACarrito(prodACarro);
+        })
+        }
+        }
+    
     renderizarProductos7(comida1);
+
+    function agregarACarrito(producto){
+        carro.push(producto);
+        console.table(carro);
+        alert('Agregaste '+producto.nombre+' al carrito')
+        tablaBody.innerHTML +=`
+        <tr>
+            <td>${producto.id}</td>
+            <td>${producto.nombre}</td>
+            <td>${producto.precio}</td>
+        </tr>
+    `;
+        }
+
 //bebidas
 let contenedorBebida = document.getElementById('menuBebida');
 let tablaBody9 = document.getElementById('tablabody');
@@ -674,11 +832,66 @@ function renderizarProductos8(listaBebida){
             </div>
         `;
     }
-    }
+    let botones7 = document.getElementsByClassName ("compra")
+    for (const boton of botones7){
+        boton.addEventListener("click", () =>{
+            console.log("hiciste click en "+ boton.id);
+            const prodACarro = bebidas1.find((producto) => producto.id == boton.id);
+            console.log(prodACarro);
+            //cargar productos al carro
+            agregarACarrito(prodACarro);
+            
+        })
+        }
+        }
     renderizarProductos8(bebidas1);
+    
+    function agregarACarrito(producto){
+        carro.push(producto);
+        console.table(carro);
+        alert('Agregaste '+producto.nombre+' al carrito')
+        tablaBody.innerHTML +=`
+        <tr>
+            <td>${producto.id}</td>
+            <td>${producto.nombre}</td>
+            <td>${producto.precio}</td>
+        </tr>
+    `;
+        }
+    
+//eventos
+/*
+let botones = document.getElementsByClassName('compra');
+    for (const boton of botones){
+        //opcion 1 - addEventListener
+        boton.addEventListener('click',()=>{
+            console.log('Hiciste click en el boton id: '+boton.id);
+            const prodACarro = productos.find((producto) => producto.id == boton.id);
+            console.log(prodACarro);
+            //cargar productos al carro
+            agregarACarrito(prodACarro);
+        })
+        }
+//aca va la tabla de precios en pesos
+function agregarACarrito(producto){
+    carro.push(producto);
+    console.table(carro);
+    alert('Agregaste '+producto.nombre+' al carrito');
+    tablaBody.innerHTML +=`
+        <tr>
+        <td>${producto.id}</td>
+            <td>${producto.nombre}</td>
+            <td>${producto.precio}</td>
+        </tr>
+    `;
+    //aqui calcular el total con un .reduce
+}
+
+*/
+const carro1 = [];
 //maquinas de cafe
 let contenedorProds = document.getElementById('misprods');
-let tablaBody = document.getElementById('tablabody');
+let tabla1 = document.getElementById('tablabody1');
 console.table (Cafeteras);
 function renderizarProductos(listaMaquina){
     //vaciamos en contenedor para evitar duplicados
@@ -691,16 +904,41 @@ function renderizarProductos(listaMaquina){
                 <div class="card-body">
                     <h5 class="card-title">${prod.nombre}</h5>
                     <p class="card-text">U$D ${prod.precio}</p>
-                    <button id=${prod.id} class="btn btn-primary compra">Comprar</button>
+                    <button id=${prod.id} class="btn btn-primary compra1">Comprar</button>
                 </div>
             </div>
         `;
-    }
+        
+        }
+        let botones8 = document.getElementsByClassName ("compra1")
+    for (const boton of botones8){
+        boton.addEventListener("click", () =>{
+            console.log("hiciste click en "+ boton.id);
+            const prodEnCarro = Cafeteras.find((producto) => producto.id == boton.id);
+            agregarAlCarro(prodEnCarro);
+            
+            
+            })
+            }
     }
     renderizarProductos(Cafeteras);
+    function agregarAlCarro(producto){
+        carro1.push(producto);
+        console.table(carro1);
+        alert('Agregaste '+producto.nombre+' al carrito')
+        tabla1.innerHTML +=`
+        <tr>
+            <td>${producto.id}</td>
+            <td>${producto.nombre}</td>
+            <td>${producto.precio}</td>
+        </tr>
+    `;
+        }
+
+
 //equipos para filtrado
 let contenedorFilt = document.getElementById('equipoFilt');
-let tablaBody2 = document.getElementById('tablabody');
+let tabla2 = document.getElementById('tablabody1');
 console.table (productoFiltrado);
 function renderizarProductos1(listaEquipo){
     //vaciamos en contenedor para evitar duplicados
@@ -713,12 +951,37 @@ function renderizarProductos1(listaEquipo){
                 <div class="card-body">
                     <h5 class="card-title">${prod.nombre}</h5>
                     <p class="card-text">U$D ${prod.precio}</p>
-                    <button id=${prod.id} class="btn btn-primary compra">Comprar</button>
+                    <button id=${prod.id} class="btn btn-primary compra1">Comprar</button>
                 </div>
             </div>
         `;
     }
+    let botones9 = document.getElementsByClassName ("compra1")
+    for (const boton of botones9){
+        boton.addEventListener("click", () =>{
+            console.log("hiciste click en "+ boton.id);
+            const prodEnCarro = productoFiltrado.find((producto) => producto.id == boton.id);
+            agregarAlCarro(prodEnCarro);
+            
+            })
+            }
+    
+    
     }
     renderizarProductos1(productoFiltrado);
+    function agregarAlCarro(producto){
+        carro1.push(producto);
+        console.table(carro1);
+        alert('Agregaste '+producto.nombre+' al carrito')
+        tabla2.innerHTML +=`
+        <tr>
+            <td>${producto.id}</td>
+            <td>${producto.nombre}</td>
+            <td>${producto.precio}</td>
+        </tr>
+    `;
+        }
+
+
     
     
