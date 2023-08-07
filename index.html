@@ -10,31 +10,58 @@
     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
     crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 <body>
     <header>
         <section>
-            <div>
-        <h1> TIENDA DE CAFE</h1>
+            <div style="background-image: linear-gradient(to right top, #b1ecd8, #b2e6e8, #c2deeb, #d0d7e1, #d3d3d3);">
+        <h1 class="text-center"> TIENDA DE CAFE</h1>
         <h2> Cafe de especialidad</h2>
     </div>
     <div>
-        <h2>MENU</h2>
-        <div class=>
-            <nav class=>
-                <ul class=>
-                    <li><a href=>CAFE|</a></li>
-                    <li><a href=>CAFE FILTRADO|</a></li>
-                    <li><a href=>COMIDA|</a></li>
-                    <li><a href=>BEBIDAS|</a></li>
-                    <li><a href=>MAQUINA DE CAFE|</a></li>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.instagram.com/" target="_blank">Instagram</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Menu
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Productos</a></li>
+                  <li><a class="dropdown-item" href="#">Maquinas de Cafe/Filtrados</a></li>
+                  <li><hr class="dropdown-divider"></li>
+
                 </ul>
-            </nav>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true"></a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+          </div>
         </div>
+      </nav>
     </div>
+
 </section>
-<main>
-    <section>
+<main class="img-bg">
+    <section style="background-image: linear-gradient(to bottom, #cfe5dd, #c3e5d2, #bce4c2, #bbe2af, #c1de99);">
         <h3>Iniciar sesion</h3>
         <form id="formulario">
         <label for="nombre">
@@ -51,57 +78,19 @@
             />
             <small id="mensaje"></small>
         </label>
-        <input type="submit" value="enviar" class="btn btn-success" />
-        <input type="button" value="borrar" class="btn btn-danger" onclick="borrarCampos()">
+        <input type="submit" value="enviar" class="btn btn-outline-success" />
+        <input type="button" value="borrar" class="btn btn-outline-secondary" onclick="borrarCampos()">
         </form>
-    </section>
-    <section>
+    
+    
         <div>
-            <h2> CAFÉ</h2>
+            <h2> MENU</h2>
         </div>
         <div id="cafeSolo" class="row">
             </section>
-            <section>
-                <div>
-                    <h2> CAFÉ CON LECHE </h2>
-                </div>
-        <div id ="cafeLeche" class="row"></div>
-        </section>
-        <section>
-            <div>
-                <h2> CAFÉ ESPECIAL </h2>
-            </div>
-    <div id ="cafeEspecial" class="row"></div>
-    </section>
-    <section>
-        <div>
-            <h2> CAFÉ FRIO</h2>
-        </div>
-<div id ="cafeFrio" class="row"></div>
-</section>
-        <section>
-            <div>
-                <h2> CAFÉ FILTRADO </h2>
-            </div>
-            <div id="cafeFiltrado" class="row">
-            </div>
-            </section>
-            <section>
-                <div>
-                    <h2> COMIDA</h2>
-                </div>
-                <div id="menuComida" class="row">
-                </div>
-                </section>
-                <section>
-                    <div>
-                        <h2> BEBIDA</h2>
-                    </div>
-                    <div id="menuBebida" class="row">
-                    </div>
-        </section>
 <section>
         <h4>Tu carrito:</h4>
+        <p id="cantidad"><!--aca se sumarian la cantidad de prod comprados--> </p>
             <table class="table table-striped">
                 <thead>
                     <th>Id</th>
@@ -110,28 +99,26 @@
                     </tr>
                 </thead>
                 <tbody id="tablabody">
+                    
     <!-- aqui tabla carrito en pesos -->
                 </tbody>
             </table>
         <h4 id="total">Total a pagar $:</h4>
+        <div>
+            <button id="finalizar" type="button" class="btn btn-outline-info btn-lg">FINALIZAR COMPRA ✌</button>
+        </div>
 </section>
-    <section>
+    <section style="background-image: linear-gradient(to bottom, #d0ece2, #d8efe2, #dff1e2, #e7f4e3, #eff6e5);">
         <div>
             <h2> MAQUINAS DE CAFE</h2>
         </div>
         <div id="misprods" class="row">
         </div>
-        </section>
-        <section>
-        <div>
-            <h2> EQUIPO PARA CAFE FILTRADO</h2>
-        </div>
-        <div id="equipoFilt" class="row"></div>
-
         <!-- Aqui los productos -->
     </section>
     <section>
         <h4>Tu carrito:</h4>
+        <p id="cantidad1"><!--aca se sumarian la cantidad de prod comprados--> </p>
         <table class="table table-striped1">
         <thead>
             <th>Id</th>
@@ -144,6 +131,9 @@
         </tbody>
         </table>
         <h4 id="total1">Total a pagar U$D:</h4>
+        <div>
+            <button id="finalizar1" type="button" class="btn btn-outline-info btn-lg">FINALIZAR COMPRA ✌</button>
+        </div>
     </section>
 </main>
 <footer>
@@ -165,6 +155,9 @@
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
     crossorigin="anonymous"
     ></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.4/build/global/luxon.min.js"></script>
     <script src="./producto-cafetera.js"></script>
     <script src="./codigo.js"></script>
     

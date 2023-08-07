@@ -16,9 +16,7 @@ const cafeSolo =[{
     nombre: "Americano",
     precio: 700,
     },
-];
-
-const cafeLeche =[{
+    {
     id: 4,
     imagen: "./assets/img/latte.jpg",
     nombre: "Flat White",
@@ -41,10 +39,8 @@ const cafeLeche =[{
     imagen: "./assets/img/moca.jpg",
     nombre: "Mocaccino",
     precio: 850,
-    }
-];
-
-const cafeEspecial =[{
+    },
+{
     id: 8,
     imagen: "./assets/img/caramel.jpg",
     nombre: "Caramel Latte",
@@ -62,9 +58,7 @@ const cafeEspecial =[{
     nombre: "Nutella Latte",
     precio: 880,
     },
-];
-
-const cafeFrio =[{
+    {
     id: 11,
     imagen: "./assets/img/iced-americano.jpg",
     nombre: "Iced Americano",
@@ -87,10 +81,8 @@ const cafeFrio =[{
     imagen: "./assets/img/iced-coffee.jpg",
     nombre: "Iced Latte Especial",
     precio: 920,
-    }
-];
-
-const cafeFiltrado =[{
+    },
+{
     id: 15,
     imagen: "./assets/img/aeropress-cafe.jpg",
     nombre: "Aeropress",
@@ -108,9 +100,7 @@ const cafeFiltrado =[{
     nombre: "V60",
     precio: 1300,
     },
-];
-
-const bebidas1 =[{
+{
     id: 18,
     imagen: "./assets/img/agua.jpg",
     nombre: "Agua c/s gas",
@@ -128,9 +118,7 @@ const bebidas1 =[{
     nombre: "Limonada / Naranja",
     precio: 600,
     },
-];
-
-const comida1 =[{
+{
     id: 21,
     imagen: "./assets/img/medialuna.jpg",
     nombre: "Medialuna",
@@ -180,55 +168,54 @@ const comida1 =[{
     }
 ];
 //dolares
-const productoFiltrado =[{
-    id: 29,
-    imagen: "./assets/img/aeropress.jpg",
-    nombre: "Aeropress",
-    precio: 900
-    },
-    {
-    id: 30,
-    imagen: "./assets/img/chemex.jpg",
-    nombre: "Chemex",
-    precio: 950,
-    },
-    {
-    id: 31,
-    imagen:"./assets/img/v60.jpg",
-    nombre: "V60",
-    precio: 850,
-    },
-];
-
 const Cafeteras = [{
-    id: 32,
+    id: 29,
     nombre: "Victoria Arduino",
     imagen: "./assets/img/victoria-arduino.png",
     grupos: 3,
     precio: 5500
 },
 {
-    id: 33,
+    id: 30,
     nombre: "Iberital",
     imagen: "https://www.iberital.com/wp-content/uploads/fly-images/4391/ib7-slidecentral-colors-2-1140x0.png",
     grupos: 2,
     precio: 4000
 },
 {
-    id: 34,
+    id: 31,
     nombre: "Nueva Simonelli",
     imagen: "https://tiendadelbarista.com/wp-content/uploads/2020/07/Diseno-sin-titulo-16-280x280.png",
     grupos: 2,
     precio: 4500
 },
 {
-    id: 35,
+    id: 32,
     nombre: "Rocket",
     imagen: "https://rockitco.cl/cdn/shop/products/Plantillaproductosworldcafecopia_0010s_0004_Rocket_appartamento_front.jpg?v=1669320413&width=1445",
     grupos: 1,
     precio: 3500,
-}
-]
+},
+{
+    id: 33,
+    imagen: "./assets/img/aeropress.jpg",
+    nombre: "Aeropress",
+    precio: 900
+    },
+    {
+    id: 34,
+    imagen: "./assets/img/chemex.jpg",
+    nombre: "Chemex",
+    precio: 950,
+    },
+    {
+    id:35,
+    imagen:"./assets/img/v60.jpg",
+    nombre: "V60",
+    precio: 850,
+    },
+];
+
 /*
 const nombreYPrecio = Cafeteras.map(cafetera =>{
     return{
