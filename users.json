@@ -1,0 +1,24 @@
+
+{
+    "cafeEnGranos": [{
+            "pais": "Brasil",
+            "molienda": "fina",
+            "proceso": "lavado",
+            "puntaje": 90
+        },
+        {
+            "pais": "Colombia",
+            "molienda": "grueso",
+            "proceso": "natural",
+            "puntaje": 85
+        },
+        {
+            "pais": "Etiopia",
+            "molienda": "fina",
+            "proceso": "lavado",
+            "puntaje": 85
+
+        }
+    ]
+}
+

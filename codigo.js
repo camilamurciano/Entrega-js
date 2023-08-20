@@ -519,18 +519,18 @@ function darDespedida(){
 
 darDespedida()
 */
-//ENTREGA 3
+
+
+
+
+//ENTREGA FINAL
 //BIENVENIDA
-
-function saludar (){
-    alert ("Hola, somos Cami & Yani, estamos para ayudarte");
-} // declaro la funcion
-
-
-saludar();
-console.log ("Hola, somos Cami & Yani, estamos para ayudarte")
-
-
+//luxon
+const DateTime = luxon.DateTime;
+const inicio = DateTime.now();
+console.log(inicio.toLocaleString());
+console.log(inicio.weekdayLong);
+Swal.fire(`Hola, bienvenido a nuestra tienda! Hoy es ${inicio.weekdayLong} de compras🎉`);
 
 
 //formulario de ingreso
@@ -571,14 +571,12 @@ formulario.addEventListener('submit', validar);
 function validar(ev){
     if(campoNombre.value == '' || campoEmail.value == ''){
         ev.preventDefault();
-        alert('Debes ingresar el nombre o mail para continuar');
+        Swal.fire ('Debes ingresar el nombre o mail para continuar');
     } 
 }
 
 
-
-
-//cafe sin leche
+//Menu de pesos
 let carro = JSON.parse(localStorage.getItem('carrito')) || [];
 let contenedorCafe = document.getElementById('cafeSolo');
 let tablaBody = document.getElementById('tablabody');
@@ -591,7 +589,7 @@ function renderizarProductos2(listaCafe){
     //cargamos las cartas de los productos solicitados
     for(const prod of listaCafe){
         contenedorCafe.innerHTML+=`
-            <div class="card col-sm-2">
+            <div class="card col-sm-2 p-3 mb-2 bg-transparent text-body">
                 <img class="card-img-top" src=${prod.imagen} alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">${prod.nombre}</h5>
@@ -621,12 +619,21 @@ function renderizarProductos2(listaCafe){
         carro.push(producto);
         console.table(carro);
         cantidad.innerText = `🛒${carro.length}`
-        alert('Bravo!!👏 Agregaste '+producto.nombre+' al carrito')
-        tablaBody.innerHTML +=`
+        //alert('Bravo!!👏 Agregaste '+producto.nombre+' al carrito')
+        Swal.fire({
+            title: 'Bravo!!👏',
+            text: `Agregaste ${producto.nombre} al carrito`,
+            imageUrl: producto.imagen,
+            imageWidth: 150,
+            imageHeight: 150,
+            imageAlt: producto.nombre,
+        })
+        document.getElementById('tablabody').innerHTML +=`
         <tr>
             <td>${producto.id}</td>
             <td>${producto.nombre}</td>
             <td>${producto.precio}</td>
+            <td><button class="btn btn-light eliminar-producto" data-index="${carro.length - 1}">🗑️</button></td>
         </tr>
     `;
     let totalCarrito = carro.reduce((acumulador, producto) => acumulador + producto.precio, 0);
@@ -634,6 +641,45 @@ function renderizarProductos2(listaCafe){
     localStorage.setItem('carrito', JSON.stringify(carro));
         }
         localStorage.removeItem('carrito')
+
+        function actualizarTotalCarrito(){
+            let totalCarrito = carro.reduce((acumulador, producto) => acumulador + producto.precio, 0);
+            document.getElementById('total').innerText = 'Total a pagar $: ' + totalCarrito;
+        }
+
+//boton eliminar en tabla de pesos
+tablaBody.addEventListener("click", (event) => {
+    if (event.target.classList.contains ("eliminar-producto")){
+        const button1 = event.target;
+        const index1 = parseInt(button1.getAttribute ("data-index"), 10);
+
+        if (!isNaN(index1) && index1 >= 0 && index1 < carro.length){
+            carro.splice (index1,1);
+            actualizarTablaCarrito ();
+            actualizarTotalCarrito ();
+            cantidad.innerText = `🛒${carro.length}`;
+            localStorage.setItem('carrito', JSON.stringify(carro));
+        }
+    }
+});
+function actualizarTablaCarrito(){
+    let tablaHTML = "";
+
+    for (const producto of carro){
+        tablaHTML+=
+        `
+        <tr>
+            <td>${producto.id}</td>
+            <td>${producto.nombre}</td>
+            <td>${producto.precio}</td>
+            <td><button class="btn btn-light eliminar-producto" data-index=" ${carro.indexOf(producto)}">🗑️</button></td>
+        </tr>
+    `;
+        
+    }
+    tablaBody.innerHTML = tablaHTML;
+}
+
 
 //boton finalizar
         let finalizarBtn1 = document.getElementById('finalizar');
@@ -666,7 +712,7 @@ localStorage.removeItem('carrito');
 
 
 //maquinas de cafe
-let carro1 = JSON.parse(localStorage.getItem('carrito')) || [];
+let carro1 = JSON.parse(localStorage.getItem('carrito1')) || [];
 let contenedorProds = document.getElementById('misprods');
 let tabla1 = document.getElementById('tablabody1');
 console.table (Cafeteras);
@@ -677,7 +723,7 @@ function renderizarProductos(listaMaquina){
     //cargamos las cartas de los productos solicitados
     for(const prod of listaMaquina){
         contenedorProds.innerHTML+=`
-            <div class="card col-sm-2">
+            <div class="card col-sm-2 p-3 mb-2 bg-transparent text-body">
                 <img class="card-img-top" src=${prod.imagen} alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">${prod.nombre}</h5>
@@ -711,22 +757,70 @@ function renderizarProductos(listaMaquina){
         carro1.push(producto);
         console.table(carro1);
         cantidad1.innerText = `🛒${carro1.length}`;
-        alert('Bravo!! 👏 Agregaste '+producto.nombre+' al carrito')
+        //alert('Bravo!! 👏 Agregaste '+producto.nombre+' al carrito')
+        //sweet
+        Swal.fire({
+            title: 'Bravo!!👏',
+            text: `Agregaste ${producto.nombre} al carrito`,
+            imageUrl: producto.imagen,
+            imageWidth: 150,
+            imageHeight: 150,
+            imageAlt: producto.nombre,
+        })
         tabla1.innerHTML +=`
         <tr>
             <td>${producto.id}</td>
             <td>${producto.nombre}</td>
             <td>${producto.precio}</td>
+            <td><button class="btn btn-light eliminar-producto1" data-index1="${carro1.length - 1}">🗑️</button></td>
         </tr>
     `;
     let totalCarrito = carro1.reduce((acumulador, producto) => acumulador + producto.precio, 0);
     document.getElementById('total1').innerText = 'Total a pagar U$D: ' + totalCarrito;
+
     //guardar en local storage
     localStorage.setItem('carrito1', JSON.stringify(carro1));
         }
     //borrar del local storage una vez que actualizo sitio
 localStorage.removeItem('carrito1')
 
+function actualizarTotalCarrito1 (){
+    let totalCarrito = carro1.reduce((acumulador, producto) => acumulador + producto.precio, 0);
+    document.getElementById('total1').innerText = 'Total a pagar U$D: ' + totalCarrito;
+}
+
+//boton eliminar en tabla dolares
+tabla1.addEventListener("click", (event) => {
+    if (event.target.classList.contains ("eliminar-producto1")){
+        const button = event.target;
+        const index = parseInt(button.getAttribute ("data-index1"), 10);
+
+        if (!isNaN(index) && index >= 0 && index < carro1.length){
+            carro1.splice (index,1);
+            actualizarTablaCarrito1 ();
+            actualizarTotalCarrito1 ();
+            cantidad1.innerText = `🛒${carro1.length}`;
+            localStorage.setItem('carrito1', JSON.stringify(carro1));
+        }
+    }
+});
+function actualizarTablaCarrito1(){
+    let tablaHTML1 = "";
+
+    for (const producto of carro1){
+        tablaHTML1+=
+        `
+        <tr>
+            <td>${producto.id}</td>
+            <td>${producto.nombre}</td>
+            <td>${producto.precio}</td>
+            <td><button class="btn btn-light eliminar-producto1" data-index1=" ${carro1.indexOf(producto)}">🗑️</button></td>
+        </tr>
+    `;
+        
+    }
+    tabla1.innerHTML = tablaHTML1;
+}
 let finalizarBtn = document.getElementById('finalizar1');
 finalizarBtn.onclick = () => {
     Toastify({
@@ -743,11 +837,42 @@ finalizarBtn.onclick = () => {
             y: 110 // vertical axis - can be a number or a string indicating unity. eg: '2em'
         },
     }).showToast();
+    //vaciar todo
+//vaciar el carro y la tabla
     carro1 = [];
     document.getElementById('tablabody1').innerHTML = ''
-    cantidad.innerText = `🛒${carro1.length}`;
+    cantidad1.innerText = `🛒${carro1.length}`;
     document.getElementById('total1').innerText = 'Total a pagar U$D: ';
     localStorage.removeItem('carrito1');
 }
-//vaciar todo
-//vaciar el carro y la tabla
+
+
+//json local
+
+
+function obtenerJsonPropio1(){
+    const URLJSON = "/users.json";
+    fetch(URLJSON)
+    .then( resp => resp.json())
+    .then((data) => {
+        console.log(data.cafeEnGranos);
+        const listaCafe = data.cafeEnGranos; //esto es un array
+        console.log(listaCafe);
+        
+        listaCafe.forEach(cafe => {
+            document.getElementById('cafe-granos').innerHTML += `
+                <tr>
+                <td>${cafe.pais}</td>
+                <td>${cafe.molienda}</td>
+                <td>${cafe.proceso}</td>
+                <td>${cafe.puntaje}</td>
+                </tr>
+            `;
+        }); 
+        
+    })
+    .catch((error) => console.log(error));
+
+}
+
+obtenerJsonPropio1();

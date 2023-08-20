@@ -1,9 +1,207 @@
-/** {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.main-bg{
-    background-color: aqua;
-}*/
+
+.section-inicio{
+background-image: url(../assets/img/cafe.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+margin: 0;
+
+}
+.leber1{
+text-align: center;
+font-family: 'Roboto', sans-serif;
+letter-spacing: 1px;
+background-size: contain;
+padding-top: 30px;
+padding-bottom: 40px;
+padding-left: 30px;
+bottom: 50px;
+margin-top: 0px;
+color: black;
+font-size: 50px;
+text-shadow: 3px 3px 5px white
+}
+.cafe1{
+    text-align: end;
+    font-family: 'Castoro Titling', cursive;
+    font-size: 20px;
+    color: beige;
+    margin-bottom: 0px;
+}
+.section-pesos{
+    background-image: linear-gradient(to top, #eac696, #e3c191, #ddbd8c, #d6b888, #d0b483, #c6ab79, #bda170, #b39866, #a48756, #947746, #856736, #765827);
+    background-size: cover;
+    -webkit-animation: section-pesos 4s linear 1s infinite alternate both;
+    animation: section-pesos 4s linear 1s infinite alternate both;
+}
+    @-webkit-keyframes section-pesos {
+        0% {
+          background:#765827;
+        }
+        50% {
+          background: #C8AE7D;
+        }
+        100% {
+          background: #EAC696;
+        }
+      }
+      @keyframes section-pesos {
+        0% {
+          background: #765827;
+        }
+        50% {
+          background: #C8AE7D;
+        }
+        100% {
+          background: #C2B8A3;
+        }
+      }
+.section-pesos{
+  margin: 0px;
+}
+.section-pesos h3{
+  margin-top: 0px;
+    font-size: 25px;
+    word-spacing: 1px;
+    font-family: 'Castoro Titling', cursive;
+}
+.nombre-1{
+    font-family: 'Roboto', sans-serif;
+}
+.email1{
+    font-family: 'Roboto', sans-serif;
+}
+.menu-1{
+    padding-top: 30px;
+    text-align: center;
+    font-family: 'Castoro Titling', cursive;
+    font-size: 35px;
+    color: #4d2600;
+    text-decoration: underline;
+    
+}
+div .menu-1::selection{
+    background-color: #A19882;
+
+}
+.carrito-pesos{
+    background-color: #EAC696;
+}
+.carrito-pesos h4{
+    font-family: 'Roboto', sans-serif;
+}
+
+/*maquina de cafe*/
+.menu-maquina {
+    padding-top: 30px;
+    text-align: center;
+    font-family: 'Castoro Titling', cursive;
+    font-size: 35px;
+    color: #4d2600;
+    text-decoration: underline;
+
+}
+.section-dolares{
+    background-image: linear-gradient(to top, #eac696, #e3c191, #ddbd8c, #d6b888, #d0b483, #c6ab79, #bda170, #b39866, #a48756, #947746, #856736, #765827);
+    background-size: cover;
+    -webkit-animation: section-dolares 4s linear 1s infinite alternate both;
+    animation: section-dolares 4s linear 1s infinite alternate both;
+}
+    @-webkit-keyframes section-dolares {
+        0% {
+          background:#765827;
+        }
+        50% {
+          background: #C8AE7D;
+        }
+        100% {
+          background: #EAC696;
+        }
+      }
+      @keyframes section-dolares {
+        0% {
+          background: #765827;
+        }
+        50% {
+          background: #C8AE7D;
+        }
+        100% {
+          background: #C2B8A3;
+        }
+      }
+
+
+.carrito-dolares{
+    background-color: #EAC696;
+}
+.carrito-dolares h4{
+    font-family: 'Roboto', sans-serif;
+}
+/*cata de cafe*/
+.tabla-1{
+  background-image: linear-gradient(to top, #eac696, #e3c191, #ddbd8c, #d6b888, #d0b483, #c6ab79, #bda170, #b39866, #a48756, #947746, #856736, #765827);
+margin-bottom: 0px;
+}
+.cata-1{
+  padding-top: 30px;
+    text-align: center;
+    font-family: 'Castoro Titling', cursive;
+    font-size: 35px;
+    color: #4d2600;
+    text-decoration: underline;
+}
+.cata-1::selection{
+  background-color: #A19882;
+
+}
+.texto-cata{
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  font-size: 20px;
+}
+.table{
+  margin-bottom: 0px;
+}
+/*footer*/
+.footerConsulta {
+    background-color: #A19882;
+    font-family: 'Castoro Titling', cursive;
+    text-align: left;
+    font-size: 21px;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 5px 0px 5px 0px;
+    color:black
+}
+
+.footer-section {
+    background-color: #E6DDC6;
+}
+
+.footer-1 {
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    font-size: 19px;
+    letter-spacing: 1;
+    padding-bottom: 20px;
+    margin: 0px;
+}
+
+.footer-iconos {
+  display: flex;
+  justify-content: end;
+  
+
+}
+.whatsapp-1{
+  position: fixed;
+  bottom: 1px;
+  right: 68px;
+
+}

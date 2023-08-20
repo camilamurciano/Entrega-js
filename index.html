@@ -10,65 +10,30 @@
     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
     crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Castoro+Titling&family=Roboto:ital,wght@0,100;0,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <header>
         <section>
-            <div style="background-image: linear-gradient(to right top, #b1ecd8, #b2e6e8, #c2deeb, #d0d7e1, #d3d3d3);">
-        <h1 class="text-center"> TIENDA DE CAFE</h1>
-        <h2> Cafe de especialidad</h2>
+            <div class="section-inicio">
+        <h1 class="leber1"> LEBER&BLU</h1>
+        <h2 class="cafe1"> Cafe de especialidad</h2>
     </div>
-    <div>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://www.instagram.com/" target="_blank">Instagram</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Menu
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Productos</a></li>
-                  <li><a class="dropdown-item" href="#">Maquinas de Cafe/Filtrados</a></li>
-                  <li><hr class="dropdown-divider"></li>
-
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true"></a>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Buscar</button>
-            </form>
-          </div>
-        </div>
-      </nav>
-    </div>
-
-</section>
+</header>
 <main class="img-bg">
-    <section style="background-image: linear-gradient(to bottom, #cfe5dd, #c3e5d2, #bce4c2, #bbe2af, #c1de99);">
+</section>
+    <section class="section-pesos">
         <h3>Iniciar sesion</h3>
         <form id="formulario">
-        <label for="nombre">
+        <label class="nombre1" for="nombre">
             Nombre:
             <input type="text" name="nombre" id="nombre" placeholder="Bubu" />
         </label>
-        <label for="email">
+        <label class="email1" for="email">
             Email:
             <input
             type="email"
@@ -82,13 +47,12 @@
         <input type="button" value="borrar" class="btn btn-outline-secondary" onclick="borrarCampos()">
         </form>
     
-    
         <div>
-            <h2> MENU</h2>
+            <h2 class="menu-1">MENU</h2>
         </div>
         <div id="cafeSolo" class="row">
             </section>
-<section>
+<section class="carrito-pesos">
         <h4>Tu carrito:</h4>
         <p id="cantidad"><!--aca se sumarian la cantidad de prod comprados--> </p>
             <table class="table table-striped">
@@ -96,27 +60,28 @@
                     <th>Id</th>
                     <th>Nombre</th>
                     <th>Precio</th>
+                    <th>Eliminar</th>
                     </tr>
                 </thead>
                 <tbody id="tablabody">
                     
-    <!-- aqui tabla carrito en pesos -->
+    <!-- aca esta la tabla carrito en pesos -->
                 </tbody>
             </table>
         <h4 id="total">Total a pagar $:</h4>
         <div>
-            <button id="finalizar" type="button" class="btn btn-outline-info btn-lg">FINALIZAR COMPRA ✌</button>
+            <button id="finalizar" type="button" class="btn btn-outline-dark btn-lg">FINALIZAR COMPRA ✌</button>
         </div>
 </section>
-    <section style="background-image: linear-gradient(to bottom, #d0ece2, #d8efe2, #dff1e2, #e7f4e3, #eff6e5);">
-        <div>
+    <section class="section-dolares">
+        <div class="menu-maquina">
             <h2> MAQUINAS DE CAFE</h2>
         </div>
         <div id="misprods" class="row">
         </div>
-        <!-- Aqui los productos -->
+        <!-- Aca seran renderizado los productos -->
     </section>
-    <section>
+    <section class="carrito-dolares">
         <h4>Tu carrito:</h4>
         <p id="cantidad1"><!--aca se sumarian la cantidad de prod comprados--> </p>
         <table class="table table-striped1">
@@ -124,37 +89,65 @@
             <th>Id</th>
             <th>Nombre</th>
             <th>Precio en U$D</th>
+            <th>Eliminar</th>
             </tr>
         </thead>
         <tbody id="tablabody1">
-            <!-- aqui tabla carrito en dolares -->
+            <!-- aca es la tabla carrito en dolares -->
         </tbody>
         </table>
         <h4 id="total1">Total a pagar U$D:</h4>
         <div>
-            <button id="finalizar1" type="button" class="btn btn-outline-info btn-lg">FINALIZAR COMPRA ✌</button>
+            <button id="finalizar1" type="button" class="btn btn-outline-dark btn-lg">FINALIZAR COMPRA ✌</button>
         </div>
     </section>
+<section class="tabla-1">
+    <h2 class="cata-1"> CATA DE CAFE</h2>
+    <p class="texto-cata">Si pasas por el local, podes disfrutar de nuestra degustación que estamos realizando con los excelentes granos de café que verás a continuación. <br>
+    Cada grano varia en su locacion, altura que se realizó la extracción, y el proceso que tuvo ese grano. Luego recibe un puntaje a traves de la SCA.</p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Pais</th>
+                <th>Molienda</th>
+                <th>Proceso</th>
+                <th>Puntaje</th>
+            </tr>
+        </thead>
+        <tbody id="cafe-granos">
+            <!-- aca ingresan los datos del json local -->
+        </tbody>
+    </table>
+</section>
 </main>
 <footer>
 <section>
     <div>
-        CONTACTO & CONSULTAS
+        <h3 class="footerConsulta">CONTACTO & CONSULTAS</h3>
     </div>
 </section>
-<section>
-    <div>
-        Buenos Aires, Argentina.
+    <section class="footer-section">
+    <div class="footerBsas">
+        <p class="footer-1">Buenos Aires, Argentina.</p>
+    </div>
+    <div class="footer-iconos">
+        <a class="gmail-1" href="https://mail.google.com/mail/u/1/#inbox?compose=CllgCJNqLdRtCVJzhxBCJRSJjTSlwXNftgMDSCzqNrwDvvBkFPtWCBqdGfvKkHJSFwpjMwcJptL" target="_blank"> <img width="37px" src="./assets/img/Vector2.png"
+            alt="gmail"></a>
+            <a class="instagram-1" href="https://www.instagram.com/" target="_blank"><img width="30px" src="./assets/img/Vector1.png"
+                alt="instagram"></a>
+        <a class="whatsapp-1" href="https://web.whatsapp.com/" target="_blank"> <img width="30px" src="./assets/img/Vector.png"
+                alt="whatsapp"></a>
     </div>
 </section>
 </footer>
 
-    </header>
+    
     <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
     crossorigin="anonymous"
     ></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.4/build/global/luxon.min.js"></script>
