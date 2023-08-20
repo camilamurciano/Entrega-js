@@ -849,7 +849,7 @@ finalizarBtn.onclick = () => {
 
 //json local
 
-
+/*
 function obtenerJsonPropio1(){
     const URLJSON = "/users.json";
     fetch(URLJSON)
@@ -876,3 +876,4 @@ function obtenerJsonPropio1(){
 }
 
 obtenerJsonPropio1();
+*/
