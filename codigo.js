@@ -851,7 +851,7 @@ finalizarBtn.onclick = () => {
 
 
 function obtenerJsonPropio1(){
-    const URLJSON = "/users.json";
+    const URLJSON = "https://raw.githubusercontent.com/camilamurciano/PF-Murciano-JS/main/users.json";
     fetch(URLJSON)
     .then( resp => resp.json())
     .then((data) => {
